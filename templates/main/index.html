@@ -1,28 +1,10 @@
-{% load static %}
-
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>EasySubmit</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-	<link rel="stylesheet" type='text/css' href="{% static 'css/inde.css' %}">
 
-  </head>
-  <body>
-    <body class="text-center">
-      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-      <div class="inner">
-        <h3 class="masthead-brand">Easy Submit</h3>
-        <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link active" href="#">Home</a>
-          <a class="nav-link" href="#">Features</a>
-          <a class="nav-link" href="#">Contact</a>
-        </nav>
-      </div>
-    </header>
+{% extends "main/base.html" %}
+
+
+
+{%block body_block%}
 
     <main role="main" class="inner cover">
       <h1 class="cover-heading">Welcome to Easy Submit</h1>
@@ -39,8 +21,5 @@
         <p>Created By <a href="http://dkxling.com//">Vince</a>
       </div>
     </footer>
-  </div>
-  </body>
-    </form>
-  </body>
-</html>
+
+    {% endblock %}
