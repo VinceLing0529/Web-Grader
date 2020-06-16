@@ -1,15 +1,20 @@
-{% load static %}
+{% extends "main/base.html" %}
+
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Teacherloginpage</title>
-    <link rel="stylesheet" type='text/css' href="{% static 'css/style.css' %}">
-  </head>
-  <body>
 
-<form class="box" action="teacherlogin.html" method="post">
+{%block body_block%}
+<a class="nav-link " href="{%url 'main:index' %}">Home</a>
+<a class="nav-link " href="{%url 'main:signup' %}">Register</a>
+<a class="nav-link active" href="{%url 'main:studentlogin' %}">Sign in</a>
+
+</nav>
+</div>
+</header>
+<main role="main" class="inner cover">
+
+
+<form class="box" action="" method="post">
   <h1>Teacher Login</h1>
   <input type="text" name="" placeholder="Username">
   <input type="password" name="" placeholder="Password">
@@ -17,9 +22,11 @@
   <button onclick="location.href='{%url 'main:signup' %}'" type="button">Sign up?</button>
   <button onclick="location.href='{%url 'main:studentlogin' %}'" type="button">I am a student</button>
 
+</main>
 
-</form>
-
-
-  </body>
-</html>
+<footer class="mastfoot mt-auto">
+  <div class="inner">
+    <p>Created By <a href="http://dkxling.com//">Vince</a>
+  </div>
+</footer>
+{% endblock %}
