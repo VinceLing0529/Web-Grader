@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import NewStudentForm
+from .forms import NewStudentForm,UserProfileInfoForm
 # Create your views here.
 def index(request):
     return render(request,'main/index.html')
@@ -12,12 +12,16 @@ def teacherlogin(request):
 
 
 def signup(request):
-    form = NewStudentForm()
+
 
     if request.method == "POST":
-        form = NewStudentForm(request.POST)
-        if form.is_valid():
-            form.save(commit=True)
+        user_form = NewStudentForm(data = request.POST)
+        profile_form = UserProfileInfoForm(data= request.POST)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user = user_form.save()
+            user.set_password(user.password)
+            user.save()
             return index(request)
         else:
             print('ERROR FORM INVALID')

@@ -13,10 +13,11 @@
       <main role="main" class="inner cover">
         <p class="lead">
         <h1>Teacher register</h1>
-        <form method="POST">
-          {{ form.as_p }}
+        <form method="POST" enctype="multipart/form-data">
+          {{ user_form.as_p }}
+          {{ profile_form.as_p }}
           {% csrf_token %}
-          <input type="submit" class='class="btn btn-lg btn-secondary"' value="Submit">
+          <input type="submit" class='class="btn btn-lg btn-secondary"' value="Register">
         </form>
       </p>
       </main>
